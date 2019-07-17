@@ -18,10 +18,11 @@ public class Signin extends AbstractPage {
         driver.get("https://app.schoology.com/login");
     }
 
-    public void loginAs(String userName, String password) {
+    public Header loginAs(String userName, String password) {
         action.setValue(userNameTextField, userName);
         action.click(loginButton);
         action.setValue(passwordTextField, password);
         action.click(loginButton);
+        return new Header();
     }
 }

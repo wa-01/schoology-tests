@@ -10,5 +10,4 @@ public class CommonSteps {
         Signin signin = new Signin();
         signin.loginAs(userName, password);
     }
-
 }
