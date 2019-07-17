@@ -5,17 +5,17 @@ import org.openqa.selenium.support.FindBy;
 
 public class Signin extends AbstractPage {
 
-    @FindBy(css = "#credentials_username")
+    @FindBy(css = "#edit-mail")
     private WebElement userNameTextField;
 
-    @FindBy(css = "#credentials_password")
+    @FindBy(css = "#edit-pass")
     private WebElement passwordTextField;
 
-    @FindBy(css = ".app_signin_action_button")
+    @FindBy(css = "#edit-submit")
     private WebElement loginButton;
 
     public Signin() {
-        driver.get("https://www.pivotaltracker.com/signin?source=navbar");
+        driver.get("https://app.schoology.com/login");
     }
 
     public void loginAs(String userName, String password) {

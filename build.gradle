@@ -19,3 +19,7 @@ dependencies {
     compile group: 'io.cucumber', name: 'cucumber-java', version: '4.2.6'
     compile group: 'io.cucumber', name: 'cucumber-testng', version: '4.2.6'
 }
+
+test {
+    systemProperty "browser", System.getProperty("browser")
+}
