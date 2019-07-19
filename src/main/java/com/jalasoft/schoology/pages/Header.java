@@ -1,19 +1,16 @@
 package com.jalasoft.schoology.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Header extends AbstractPage {
 
+    private final static String TAB_NAME = "//div[@aria-live='polite']//span[text()='%s']";
+
     @FindBy(xpath = "//div[@data-sgy-sitenav='header-my-account-menu']")
     private WebElement headerMyAccountMenu;
-
-    @FindBy(xpath = "//div[@aria-live='polite']//span[text()='Courses']")
-    private WebElement coursesMenu;
-
-    @FindBy(xpath = "//div[@aria-live='polite']//span[text()='Groups']")
-    private WebElement groupsMenu;
 
     @FindBy(xpath = "//a[@href='/resources' and text()='Resources']")
     private WebElement resourcesMenu;
@@ -45,32 +42,32 @@ public class Header extends AbstractPage {
     }
 
     public void clickCoursesMenu(){
-        action.click(coursesMenu);
+        action.click(By.xpath(String.format(TAB_NAME, "Groups")));
     }
 
     public void clickGroupsMenu(){
-        action.click(groupsMenu);
+        action.click(By.xpath(String.format(TAB_NAME, "Resources")));
     }
 
-    public void clickResourcessMenu(){
+    public void clickResourcesMenu(){
         action.click(resourcesMenu);
     }
 
-    public void clickgradesMenuDropdown(){
+    public void clickGradesMenuDropdown(){
         action.click(gradesMenuDropdown);
     }
 
-    public void clickiconSearchMenu(){
+    public void clickIconSearchMenu(){
         action.click(iconSearchMenu);
     }
 
-    public void clickiconCalendarMenu(){
+    public void clickOnCalendarMenu(){
         action.click(iconCalendarMenu);
     }
-    public void clickiconMailMenu(){
+    public void clickIconMailMenu(){
         action.click(iconMailMenu);
     }
-    public void clickiconBellMenu(){
+    public void clickiIconBellMenu(){
         action.click(iconBellMenu);
     }
 }
