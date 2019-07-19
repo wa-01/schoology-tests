@@ -61,13 +61,13 @@ public class Header extends AbstractPage {
         action.click(iconSearchMenu);
     }
 
-    public void clickOnCalendarMenu(){
+    public void clickIconCalendarMenu(){
         action.click(iconCalendarMenu);
     }
     public void clickIconMailMenu(){
         action.click(iconMailMenu);
     }
-    public void clickiIconBellMenu(){
+    public void clickIconBellMenu(){
         action.click(iconBellMenu);
     }
 }
