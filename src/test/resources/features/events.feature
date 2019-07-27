@@ -4,9 +4,12 @@ Feature: Activities
 
   Scenario: Create new Event
     When I click the "Events" link
-      And I create the event with:
-        | title | EventTitle |
-        | postTo | Me
+      And I set the event title as "EventTitle"
+      And I select the "Post to" option to "Me"
+      And I press the "Create" event button
+      And I go to the "Recent Activity" page
+    Then I validate event "EventTitle" is available
+
 
 
 
