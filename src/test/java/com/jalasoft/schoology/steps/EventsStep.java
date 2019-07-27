@@ -54,4 +54,19 @@ public class EventsStep extends AbstractPage {
         assertEquals(actualEventTitle, eventTitle);
     }
 
+    @When("I click the \"Calendar\" link")
+    public void iClickTheCalendarLink(){
+        dashboard.clickTheCalendarLink();
+    }
+
+    @Then("I start the creation of an event in Today's date")
+    public void iStartTheCreationOfEventToday(){
+        eventDetails.startCreatingEventToday();
+    }
+
+    @And("I go to the \"Home\" page")
+    public void iGoToTheHomePage(){
+        eventDetails.goToHomePage();
+    }
+
 }

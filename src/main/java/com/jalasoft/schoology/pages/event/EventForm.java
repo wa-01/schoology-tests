@@ -40,8 +40,6 @@ public class EventForm extends AbstractPage {
     }
 
     public EventDetails pressButton(){
-        //JavascriptExecutor js = (JavascriptExecutor)driver;
-        //driver.findElement(By.id("edit-title")).sendKeys(title);
         action.click(eventCreateButton);
         return new EventDetails();
     }

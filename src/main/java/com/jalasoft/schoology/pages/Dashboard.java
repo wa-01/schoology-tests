@@ -16,6 +16,9 @@ public class Dashboard extends AbstractPage {
     @FindBy (xpath = "//div[@id='smart-box-content']//div[@style='display: block;']")
     private WebElement eventTitleTextInput;
 
+    @FindBy (css = "a[href='/user-calendar']")
+    private WebElement clickCalendarLink;
+
     public Dashboard clickCourseDashboardTab(){
         action.click(clickCourseDashboard);
         return new Dashboard();
@@ -26,4 +29,8 @@ public class Dashboard extends AbstractPage {
         return new Dashboard();
     }
 
+    public Dashboard clickTheCalendarLink() {
+        action.click(clickCalendarLink);
+        return new Dashboard();
+    }
 }
