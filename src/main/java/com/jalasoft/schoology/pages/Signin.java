@@ -20,7 +20,6 @@ public class Signin extends AbstractPage {
 
     public Header loginAs(String userName, String password) {
         action.setValue(userNameTextField, userName);
-        action.click(loginButton);
         action.setValue(passwordTextField, password);
         action.click(loginButton);
         return new Header();
