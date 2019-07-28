@@ -10,7 +10,7 @@ public class Dashboard extends AbstractPage {
     @FindBy(css = ".smartbox-boxtab")
     private WebElement clickEventLink;
 
-    @FindBy(css = "a[href='/home/course-dashboard]'")
+    @FindBy(css = "a[href='/home/course-dashboard']")
     private WebElement clickCourseDashboard;
 
     @FindBy (xpath = "//div[@id='smart-box-content']//div[@style='display: block;']")
