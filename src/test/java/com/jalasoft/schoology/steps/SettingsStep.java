@@ -1,10 +1,9 @@
 package com.jalasoft.schoology.steps;
 
-import com.jalasoft.schoology.pages.AbstractPage;
 import com.jalasoft.schoology.pages.Settings;
 import cucumber.api.java.en.And;
 
-public class SettingsStep extends AbstractPage {
+public class SettingsStep {
 
     private Settings settings;
 

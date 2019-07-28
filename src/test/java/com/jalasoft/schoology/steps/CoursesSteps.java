@@ -1,6 +1,5 @@
 package com.jalasoft.schoology.steps;
 
-import com.jalasoft.schoology.pages.AbstractPage;
 import com.jalasoft.schoology.pages.Course;
 import com.jalasoft.schoology.pages.Dashboard;
 import cucumber.api.java.en.And;
@@ -9,7 +8,7 @@ import cucumber.api.java.en.When;
 
 import static org.testng.Assert.assertEquals;
 
-public class CoursesSteps extends AbstractPage {
+public class CoursesSteps {
 
     private Dashboard dashboard;
     private Course course;

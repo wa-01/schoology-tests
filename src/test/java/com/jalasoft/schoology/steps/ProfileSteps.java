@@ -1,6 +1,5 @@
 package com.jalasoft.schoology.steps;
 
-import com.jalasoft.schoology.pages.AbstractPage;
 import com.jalasoft.schoology.pages.Dashboard;
 import com.jalasoft.schoology.pages.Header;
 import com.jalasoft.schoology.pages.Profile;
@@ -10,7 +9,7 @@ import cucumber.api.java.en.When;
 
 import static org.testng.Assert.assertEquals;
 
-public class ProfileSteps extends AbstractPage {
+public class ProfileSteps  {
 
     private Header header;
     private Profile profile;

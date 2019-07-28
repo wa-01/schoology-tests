@@ -1,6 +1,5 @@
 package com.jalasoft.schoology.steps;
 
-import com.jalasoft.schoology.pages.AbstractPage;
 import com.jalasoft.schoology.pages.Dashboard;
 import com.jalasoft.schoology.pages.Header;
 import com.jalasoft.schoology.pages.event.EventDetails;
@@ -11,7 +10,7 @@ import cucumber.api.java.en.When;
 
 import static org.testng.Assert.assertEquals;
 
-public class EventsStep extends AbstractPage {
+public class EventsStep {
 
     private Dashboard dashboard;
     private EventDetails eventDetails;
