@@ -2,6 +2,7 @@ package com.jalasoft.schoology.steps;
 
 import com.jalasoft.schoology.pages.AbstractPage;
 import com.jalasoft.schoology.pages.Dashboard;
+import com.jalasoft.schoology.pages.Header;
 import com.jalasoft.schoology.pages.event.EventDetails;
 import com.jalasoft.schoology.pages.event.EventForm;
 import cucumber.api.java.en.And;
@@ -15,12 +16,14 @@ public class EventsStep extends AbstractPage {
     private Dashboard dashboard;
     private EventDetails eventDetails;
     private EventForm eventForm;
+    private Header header;
 
 
-    public EventsStep(Dashboard dashboard, EventDetails eventDetails, EventForm eventForm){
+    public EventsStep(Dashboard dashboard, EventDetails eventDetails, EventForm eventForm, Header header){
         this.dashboard = dashboard;
         this.eventDetails = eventDetails;
         this.eventForm = eventForm;
+        this.header = header;
     }
 
     @When("I click the \"Events\" link")
@@ -67,6 +70,18 @@ public class EventsStep extends AbstractPage {
     @And("I go to the \"Home\" page")
     public void iGoToTheHomePage(){
         eventDetails.goToHomePage();
+    }
+
+    @When("I select event {string}")
+    public void iSelectAnEvent(String eventTitle){
+        eventDetails.selectEvent(eventTitle);
+    }
+
+    @Then("I validate the \"Created By\" name is the same as the profile account")
+    public void iValidateCreatedByAndProfileNameIsTheSame(){
+        String createdByName = eventDetails.getCreatedByName();
+        String profileName = header.getMyAccountName();
+        assertEquals(createdByName, profileName);
     }
 
 }
