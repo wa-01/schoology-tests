@@ -30,6 +30,9 @@ public class Header extends AbstractPage {
     @FindBy(css = "symbol#icon-bell")
     private WebElement iconBellMenu;
 
+    @FindBy(xpath = "//a[contains(text(),'Your Profile')]")
+    private WebElement yourProfileLink;
+
 
 
     public AccountMenu clickHeaderMyAccountMenu() {
@@ -70,4 +73,6 @@ public class Header extends AbstractPage {
     public void clickIconBellMenu(){
         action.click(iconBellMenu);
     }
+    public void clickYourProfileLink(){action.click(yourProfileLink);}
+
 }
