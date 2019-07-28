@@ -19,6 +19,9 @@ public class Dashboard extends AbstractPage {
     @FindBy (css = "a[href='/user-calendar']")
     private WebElement clickCalendarLink;
 
+    @FindBy(css = ".message-text")
+    private WebElement messageText;
+
     public Dashboard clickCourseDashboardTab(){
         action.click(clickCourseDashboard);
         return new Dashboard();
@@ -32,5 +35,9 @@ public class Dashboard extends AbstractPage {
     public Dashboard clickTheCalendarLink() {
         action.click(clickCalendarLink);
         return new Dashboard();
+    }
+
+    public String getMessageText(){
+        return action.getText(messageText);
     }
 }

@@ -5,5 +5,5 @@ Feature: Profile
 
   Scenario: I can load my profile
     When I click the profile dropdown
-      And I click 'Your Profile" link
+      And I click "Your Profile" link
     Then I validate the page title name is the same as the profile account
