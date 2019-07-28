@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class Header extends AbstractPage {
 
     private final static String TAB_NAME = "//div[@aria-live='polite']//span[text()='%s']";
+    private final static String ACCOUNT_LINK = "//a[contains(text(),'%s')]";
 
     @FindBy(xpath = "//div[@data-sgy-sitenav='header-my-account-menu']")
     private WebElement headerMyAccountMenu;
@@ -29,11 +30,6 @@ public class Header extends AbstractPage {
 
     @FindBy(css = "symbol#icon-bell")
     private WebElement iconBellMenu;
-
-    @FindBy(xpath = "//a[contains(text(),'Your Profile')]")
-    private WebElement yourProfileLink;
-
-
 
     public AccountMenu clickHeaderMyAccountMenu() {
         action.click(headerMyAccountMenu);
@@ -73,6 +69,9 @@ public class Header extends AbstractPage {
     public void clickIconBellMenu(){
         action.click(iconBellMenu);
     }
-    public void clickYourProfileLink(){action.click(yourProfileLink);}
+    public void clickAccountLink(String link){
+        String accountLinkLocator = String.format(ACCOUNT_LINK, link);
+        action.click(By.xpath(accountLinkLocator));
+    }
 
 }

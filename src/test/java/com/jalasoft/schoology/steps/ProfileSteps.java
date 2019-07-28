@@ -28,9 +28,9 @@ public class ProfileSteps extends AbstractPage {
         header.clickHeaderMyAccountMenu();
     }
 
-    @And("I click \"Your Profile\" link")
-    public void iClickYourProfileLink(){
-        header.clickYourProfileLink();
+    @And("I click {string} link")
+    public void iClickYourProfileLink(String link){
+        header.clickAccountLink(link);
     }
 
     @Then("I validate the page title name is the same as the profile account")
