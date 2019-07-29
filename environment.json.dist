@@ -1,0 +1,13 @@
+{
+  "credentials" : {
+    "student" : {
+      "username" : "",
+      "password" : ""
+    },
+    "trainer" : {
+      "username" : "",
+      "password" : ""
+    }
+  },
+  "browser" : "chrome"
+}

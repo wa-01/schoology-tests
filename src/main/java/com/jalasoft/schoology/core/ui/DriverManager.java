@@ -1,6 +1,8 @@
 package com.jalasoft.schoology.core.ui;
 
 import java.util.concurrent.TimeUnit;
+
+import com.jalasoft.schoology.core.Environment;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,7 +18,7 @@ public class DriverManager {
 	private WebDriverWait wait;
 
 	private DriverManager() {
-        String browser = System.getProperty("browser", "chrome");
+		String browser = Environment.getInstance().getValue("$['browser']");
 		driver = DriverFactory.getDriver(browser);
 
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
