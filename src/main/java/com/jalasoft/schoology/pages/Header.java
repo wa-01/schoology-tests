@@ -1,5 +1,6 @@
 package com.jalasoft.schoology.pages;
 
+import com.jalasoft.schoology.pages.Courses.CoursesMenu;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +12,12 @@ public class Header extends AbstractPage {
 
     @FindBy(xpath = "//div[@data-sgy-sitenav='header-my-account-menu']")
     private WebElement headerMyAccountMenu;
+
+    @FindBy(xpath = "//div[@aria-live='polite']//span[text()='Courses']")
+    private WebElement coursesMenu;
+
+    @FindBy(xpath = "//div[@aria-live='polite']//span[text()='Groups']")
+    private WebElement groupsMenu;
 
     @FindBy(xpath = "//a[@href='/resources' and text()='Resources']")
     private WebElement resourcesMenu;
@@ -41,9 +48,11 @@ public class Header extends AbstractPage {
         return action.getText(headerMyAccountMenu);
     }
 
-    public void clickCoursesMenu(){
-        action.click(By.xpath(String.format(TAB_NAME, "Groups")));
+    public CoursesMenu clickHeaderCoursesMenu(){
+        action.click(coursesMenu);
+        return new CoursesMenu();
     }
+
 
     public void clickGroupsMenu(){
         action.click(By.xpath(String.format(TAB_NAME, "Resources")));
