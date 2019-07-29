@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Header extends AbstractPage {
 
+    private final static String TAB_NAME = "//div[@aria-live='polite']//span[text()='%s']";
+
     @FindBy(xpath = "//div[@data-sgy-sitenav='header-my-account-menu']")
     private WebElement headerMyAccountMenu;
 
@@ -35,6 +37,8 @@ public class Header extends AbstractPage {
     @FindBy(css = "symbol#icon-bell")
     private WebElement iconBellMenu;
 
+
+
     public AccountMenu clickHeaderMyAccountMenu() {
         action.click(headerMyAccountMenu);
         return new AccountMenu();
@@ -49,29 +53,30 @@ public class Header extends AbstractPage {
         return new CoursesMenu();
     }
 
+
     public void clickGroupsMenu(){
-        action.click(groupsMenu);
+        action.click(By.xpath(String.format(TAB_NAME, "Resources")));
     }
 
-    public void clickResourcessMenu(){
+    public void clickResourcesMenu(){
         action.click(resourcesMenu);
     }
 
-    public void clickgradesMenuDropdown(){
+    public void clickGradesMenuDropdown(){
         action.click(gradesMenuDropdown);
     }
 
-    public void clickiconSearchMenu(){
+    public void clickIconSearchMenu(){
         action.click(iconSearchMenu);
     }
 
-    public void clickiconCalendarMenu(){
+    public void clickIconCalendarMenu(){
         action.click(iconCalendarMenu);
     }
-    public void clickiconMailMenu(){
+    public void clickIconMailMenu(){
         action.click(iconMailMenu);
     }
-    public void clickiconBellMenu(){
+    public void clickIconBellMenu(){
         action.click(iconBellMenu);
     }
 }
