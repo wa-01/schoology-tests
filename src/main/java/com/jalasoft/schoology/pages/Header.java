@@ -1,10 +1,10 @@
 package com.jalasoft.schoology.pages;
 
 import com.jalasoft.schoology.pages.Courses.CoursesMenu;
+import com.jalasoft.schoology.pages.groups.Groups;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Header extends AbstractPage {
 
@@ -48,35 +48,36 @@ public class Header extends AbstractPage {
         return action.getText(headerMyAccountMenu);
     }
 
-    public CoursesMenu clickHeaderCoursesMenu(){
+    public CoursesMenu clickHeaderCoursesMenu() {
         action.click(coursesMenu);
         return new CoursesMenu();
     }
 
 
-    public void clickGroupsMenu(){
-        action.click(By.xpath(String.format(TAB_NAME, "Resources")));
+    public Groups clickGroupsMenu() {
+        action.click(By.xpath(String.format(TAB_NAME, "Groups")));
+        return new Groups();
     }
 
-    public void clickResourcesMenu(){
+    public void clickResourcesMenu() {
         action.click(resourcesMenu);
     }
 
-    public void clickGradesMenuDropdown(){
+    public void clickGradesMenuDropdown() {
         action.click(gradesMenuDropdown);
     }
 
-    public void clickIconSearchMenu(){
+    public void clickIconSearchMenu() {
         action.click(iconSearchMenu);
     }
 
-    public void clickIconCalendarMenu(){
+    public void clickIconCalendarMenu() {
         action.click(iconCalendarMenu);
     }
-    public void clickIconMailMenu(){
+    public void clickIconMailMenu() {
         action.click(iconMailMenu);
     }
-    public void clickIconBellMenu(){
+    public void clickIconBellMenu() {
         action.click(iconBellMenu);
     }
 }
