@@ -23,7 +23,7 @@ public class EventSteps {
         this.eventForm = eventForm;
     }
 
-    @And("I click the \"Events\" link")
+    @And("I click the Events link")
     public void iClickTheEventsLink(){
         dashboard.clickTheEventLink();
     }
@@ -33,17 +33,17 @@ public class EventSteps {
         eventDetails = eventForm.setEventTitle(title);
     }
 
-    @And("I select the \"Post to\" option to {string}")
+    @And("I select the Post to option to {string}")
     public void iSelectPostTo(String profile){
         eventDetails = eventForm.setEventPostTo(profile);
     }
 
-    @And("I press the \"Create\" event button")
+    @And("I press the Create event button")
     public void iPressCreateEventButton(){
         eventDetails = eventForm.pressButton();
     }
 
-    @And("I go to the \"Recent Activity\" page")
+    @And("I go to the Recent Activity page")
     public void iGoToRecentActivityPage(){
         eventDetails.goToRecentActivityPage();
     }
@@ -54,12 +54,12 @@ public class EventSteps {
         assertEquals(actualEventTitle, eventTitle);
     }
 
-    @And("I wait {int} seconds to avoid \"Too Many Requests\" message")
+    @And("I wait {int} seconds to avoid Too Many Requests message")
     public void iWaitSomeSeconds(int seconds) throws InterruptedException {
         eventDetails.waitSomeSeconds(seconds);
     }
 
-    @Given("I click the \"Calendar\" link")
+    @Given("I click the Calendar link")
     public void iClickTheCalendarLink(){
         dashboard.clickTheCalendarLink();
     }
@@ -69,7 +69,7 @@ public class EventSteps {
         eventDetails.startCreatingEventToday();
     }
 
-    @And("I go to the \"Home\" page")
+    @And("I go to the Home page")
     public void iGoToTheHomePage(){
         eventDetails.goToHomePage();
     }
