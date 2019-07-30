@@ -11,6 +11,9 @@ public class Dashboard extends AbstractPage{
     @FindBy (css = "a[href='/user-calendar']")
     private WebElement clickCalendarLink;
 
+    @FindBy (css = "h2[class='page-title ']")
+    private WebElement pageTitle;
+
 
     public Dashboard clickTheEventLink(){
         action.click(clickEventLink);
@@ -22,4 +25,7 @@ public class Dashboard extends AbstractPage{
         return new Dashboard();
     }
 
+    public String getPageTitle(){
+        return action.getText(pageTitle);
+    }
 }
