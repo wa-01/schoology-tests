@@ -19,25 +19,21 @@ public class HeaderSteps {
         this.accountMenu= accountMenu;
         this.groups= groups;
     }
-
     @Given("I validate the account label is {string}")
     public void iAssertAccountName(String userName) {
         Header header = new Header();
         Assert.assertEquals(header.getMyAccountName(), userName);
     }
-
     @Then("I click Account Menu")
     public void iClickAccountMenu() {
         Header header = new Header();
         accountMenu = header.clickHeaderMyAccountMenu();
     }
-
     @When("I click Courses menu")
     public void iClickCoursesMenu(){
         Header header = new Header();
         coursesMenu = header.clickHeaderCoursesMenu();
     }
-
     @When("I click Group Tab")
     public void iClickGroupTab() {
         Header header = new Header();
