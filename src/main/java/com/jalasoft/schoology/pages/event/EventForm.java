@@ -36,6 +36,9 @@ public class EventForm extends AbstractPage {
 
     public EventDetails pressButton(){
         action.click(eventCreateButton);
+        if (driver.findElements(By.cssSelector("#error-page")).size() > 0) {
+            driver.navigate().to(driver.getCurrentUrl());
+        }
         return new EventDetails();
     }
 }

@@ -31,6 +31,9 @@ public class GroupsForm extends AbstractPage {
     @FindBy(css = "span.group-title")
     private WebElement backToGroupLink;
 
+    @FindBy(css = "#error-page")
+    private By errorPage;
+
     public Object addGroups(Map<String, String> data) {
         Map<String, ISteps> strategyMap = new HashMap<>();
         strategyMap.put("edit-name", () -> action.clearAndSetValue(groupNameTextArea, data.get("edit-name")));
@@ -49,10 +52,15 @@ public class GroupsForm extends AbstractPage {
 
         // This needs to be removed
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        if (driver.findElements(By.cssSelector("#error-page")).size() > 0) {
+            driver.navigate().to(driver.getCurrentUrl());
+        }
+
+        //driver.navigate().to(driver.getCurrentUrl());
 
         return new GroupDetail();
     }

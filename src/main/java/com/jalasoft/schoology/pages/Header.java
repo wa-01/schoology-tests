@@ -10,7 +10,7 @@ public class Header extends AbstractPage {
 
     private final static String TAB_NAME = "//div[@aria-live='polite']//span[text()='%s']";
 
-    @FindBy(xpath = "//div[@data-sgy-sitenav='header-my-account-menu']")
+    @FindBy(css = "div[data-sgy-sitenav='header-my-account-menu']>button")
     private WebElement headerMyAccountMenu;
 
     @FindBy(xpath = "//div[@aria-live='polite']//span[text()='Courses']")
