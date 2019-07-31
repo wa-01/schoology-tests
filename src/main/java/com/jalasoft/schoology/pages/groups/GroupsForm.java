@@ -33,8 +33,8 @@ public class GroupsForm extends AbstractPage {
 
     public Object addGroups(Map<String, String> data) {
         Map<String, ISteps> strategyMap = new HashMap<>();
-        strategyMap.put("edit-name", () -> action.setValue(groupNameTextArea, data.get("edit-name")));
-        strategyMap.put("edit-description", () -> action.setValue(groupDescriptionTextArea, data.get("edit-description")));
+        strategyMap.put("edit-name", () -> action.clearAndSetValue(groupNameTextArea, data.get("edit-name")));
+        strategyMap.put("edit-description", () -> action.clearAndSetValue(groupDescriptionTextArea, data.get("edit-description")));
         strategyMap.put("privacy_level" , ()-> addPrivacy(data.get("privacy_level")));
         strategyMap.put("invite_type", ()-> addInviteType(data.get("invite_type")));
         strategyMap.put("category", ()-> addCategory(data.get("category")));
