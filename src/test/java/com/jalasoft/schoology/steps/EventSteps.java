@@ -24,76 +24,60 @@ public class EventSteps {
         this.eventForm = eventForm;
         this.header = header;
     }
-
-    @And("I click the Events link")
+    @Given("I click the Events link")
     public void iClickTheEventsLink(){
         dashboard.clickTheEventLink();
     }
-
     @And("I set the event title as {string}")
     public void iSetEventTitle(String title){
         eventDetails = eventForm.setEventTitle(title);
     }
-
     @And("I select the Post to option to {string}")
     public void iSelectPostTo(String profile){
         eventDetails = eventForm.setEventPostTo(profile);
     }
-
     @And("I press the Create event button")
     public void iPressCreateEventButton(){
         eventDetails = eventForm.pressButton();
     }
-
     @And("I go to the Recent Activity page")
     public void iGoToRecentActivityPage(){
         eventDetails.goToRecentActivityPage();
     }
-
     @Then("I validate event {string} is available")
     public void iValidateEventIsAvailable(String eventTitle){
         String actualEventTitle = eventDetails.getEventTitleLabel();
         assertEquals(actualEventTitle, eventTitle);
     }
-
     @And("I wait {int} seconds to avoid Too Many Requests message")
     public void iWaitSomeSeconds(int seconds) throws InterruptedException {
         eventDetails.waitSomeSeconds(seconds);
     }
-
     @Given("I click the Calendar link")
     public void iClickTheCalendarLink(){
         dashboard.clickTheCalendarLink();
     }
-
     @When("I start the creation of an event in Today's date")
     public void iStartTheCreationOfEventToday(){
         eventDetails.startCreatingEventToday();
     }
-
     @And("I go to the Home page")
     public void iGoToTheHomePage(){
         eventDetails.goToHomePage();
     }
-
     @When("I select event {string}")
     public void iSelectAnEvent(String eventTitle){
         eventDetails.selectEvent(eventTitle);
     }
-
     @Then("I validate the Created By name is the same as the profile account")
     public void iValidateCreatedByAndProfileNameIsTheSame(){
         String createdByName = eventDetails.getCreatedByName();
         String profileName = header.getMyAccountName();
         assertEquals(createdByName, profileName);
     }
-
     @And("I validate the page title is {string}")
     public void iValidatePageTitleIsEventName(String eventName){
         String pageTitle = dashboard.getPageTitle();
         assertEquals(eventName, pageTitle);
-
     }
-
-
 }

@@ -1,8 +1,10 @@
 Feature: Events
 
-  Scenario: Create new Event from "Recent Activity" page
+  Background: Sign-in in Schoology
     Given I sign in as "student"
-    When I click the Events link
+
+  Scenario: Create new Event from "Recent Activity" page
+    Given I click the Events link
       And I set the event title as "EventTitle"
       And I select the Post to option to "Me"
       And I press the Create event button

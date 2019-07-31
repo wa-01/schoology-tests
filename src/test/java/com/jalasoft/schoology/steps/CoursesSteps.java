@@ -1,8 +1,11 @@
 package com.jalasoft.schoology.steps;
 
 import com.jalasoft.schoology.pages.Courses.*;
+import com.jalasoft.schoology.pages.Dashboard;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Assert;
 
@@ -17,6 +20,7 @@ public class CoursesSteps {
     private CoursesList courseList;
     private CourseCenterWrapper courseCenterWrapper;
     private CreateFolder createFolder;
+    private Dashboard dashboard;
 
     @And("I click myCourses link")
     public void iClickMyCoursesLink() {
@@ -134,5 +138,14 @@ public class CoursesSteps {
     public void iSetFolderName(Map<String, String> folderData){
         createFolder = new CreateFolder();
         createFolder.createFolder(folderData);
+    }
+    @Given("I select Course Dashboard")
+    public void iSelectCourseDashboard(){
+        dashboard = new Dashboard();
+        dashboard.clickCourseDashboardTab();
+    }
+    @When("I select course {string}")
+    public void iSelectACourse(String courseName){
+        dashboard.selectCourse(courseName);
     }
 }
