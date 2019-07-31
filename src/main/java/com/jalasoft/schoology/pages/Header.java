@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 public class Header extends AbstractPage {
 
     private final static String TAB_NAME = "//div[@aria-live='polite']//span[text()='%s']";
+    private final static String ACCOUNT_LINK = "//a[contains(text(),'%s')]";
 
     @FindBy(xpath = "//div[@data-sgy-sitenav='header-my-account-menu']")
     private WebElement headerMyAccountMenu;
@@ -79,5 +80,9 @@ public class Header extends AbstractPage {
     }
     public void clickIconBellMenu() {
         action.click(iconBellMenu);
+    }
+    public void clickAccountLink(String link){
+        String accountLinkLocator = String.format(ACCOUNT_LINK, link);
+        action.click(By.xpath(accountLinkLocator));
     }
 }

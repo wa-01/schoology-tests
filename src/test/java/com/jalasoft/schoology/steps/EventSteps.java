@@ -65,19 +65,31 @@ public class EventSteps {
     public void iGoToTheHomePage(){
         eventDetails.goToHomePage();
     }
-    @When("I select event {string}")
+    @Given("I select event {string}")
     public void iSelectAnEvent(String eventTitle){
         eventDetails.selectEvent(eventTitle);
     }
-    @Then("I validate the Created By name is the same as the profile account")
+    @When("I validate the Created By name is the same as the profile account")
     public void iValidateCreatedByAndProfileNameIsTheSame(){
         String createdByName = eventDetails.getCreatedByName();
         String profileName = header.getMyAccountName();
         assertEquals(createdByName, profileName);
     }
-    @And("I validate the page title is {string}")
+    @Then("I validate the page title is {string}")
     public void iValidatePageTitleIsEventName(String eventName){
         String pageTitle = dashboard.getPageTitle();
         assertEquals(eventName, pageTitle);
+    }
+    @And("I click the event settings button")
+    public void iClickTheEventSettingsButton(){
+        dashboard.clickEventSettingsButton();
+    }
+    @And("I select the {string} option")
+    public void iSelectSettingOption(String option){
+        dashboard.selectSettingOption(option);
+    }
+    @And("I press the Delete button")
+    public void iPressTheDeleteButton(){
+        dashboard.pressDeleteButton();
     }
 }

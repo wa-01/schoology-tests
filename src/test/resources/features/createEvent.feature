@@ -22,6 +22,20 @@ Feature: Events
       And I wait 5 seconds to avoid Too Many Requests message
 
   Scenario: I can open my created events
-    When I select event "EventTitle"
-    Then I validate the Created By name is the same as the profile account
-      And I validate the page title is "EventTitle"
+    Given I select event "EventTitle"
+    When I validate the Created By name is the same as the profile account
+    Then I validate the page title is "EventTitle"
+    And I wait 5 seconds to avoid Too Many Requests message
+
+  Scenario: I delete created events
+    Given I select event "EventTitle"
+      And I click the event settings button
+      And I select the "Delete" option
+      And I press the Delete button
+      And I wait 7 seconds to avoid Too Many Requests message
+      And I go to the Home page
+      And I select event "CalendarEvent"
+      And I click the event settings button
+      And I select the "Delete" option
+      And I press the Delete button
+      And I wait 5 seconds to avoid Too Many Requests message 
