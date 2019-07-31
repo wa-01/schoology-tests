@@ -16,11 +16,13 @@ public class EventSteps {
     private Dashboard dashboard;
     private EventDetails eventDetails;
     private EventForm eventForm;
+    private Header header;
 
-    public EventSteps(Dashboard dashboard, EventDetails eventDetails, EventForm eventForm) {
+    public EventSteps(Dashboard dashboard, EventDetails eventDetails, EventForm eventForm, Header header) {
         this.dashboard = dashboard;
         this.eventDetails = eventDetails;
         this.eventForm = eventForm;
+        this.header = header;
     }
 
     @And("I click the Events link")
@@ -72,6 +74,25 @@ public class EventSteps {
     @And("I go to the Home page")
     public void iGoToTheHomePage(){
         eventDetails.goToHomePage();
+    }
+
+    @When("I select event {string}")
+    public void iSelectAnEvent(String eventTitle){
+        eventDetails.selectEvent(eventTitle);
+    }
+
+    @Then("I validate the Created By name is the same as the profile account")
+    public void iValidateCreatedByAndProfileNameIsTheSame(){
+        String createdByName = eventDetails.getCreatedByName();
+        String profileName = header.getMyAccountName();
+        assertEquals(createdByName, profileName);
+    }
+
+    @And("I validate the page title is {string}")
+    public void iValidatePageTitleIsEventName(String eventName){
+        String pageTitle = dashboard.getPageTitle();
+        assertEquals(eventName, pageTitle);
+
     }
 
 

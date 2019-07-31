@@ -18,3 +18,8 @@ Feature: Events
         And I go to the Home page
     Then I validate event "CalendarEvent" is available
       And I wait 5 seconds to avoid Too Many Requests message
+
+  Scenario: I can open my created events
+    When I select event "EventTitle"
+    Then I validate the Created By name is the same as the profile account
+      And I validate the page title is "EventTitle"
