@@ -94,7 +94,7 @@ public class CoursesSteps {
         CoursesMenu menu = new CoursesMenu();
         boolean courseIsListed = true;
         try {
-            menu.clickCourseName(courseName);
+            menu.readCourseName(courseName);;
         }catch (WebDriverException ex) {
             courseIsListed = false;
         }
