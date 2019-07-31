@@ -1,21 +1,16 @@
 package com.jalasoft.schoology.steps;
 
 import com.jalasoft.schoology.pages.AccountMenu;
-import com.jalasoft.schoology.pages.Header;
 import com.jalasoft.schoology.pages.groups.GroupDetail;
 import com.jalasoft.schoology.pages.groups.Groups;
 import com.jalasoft.schoology.pages.groups.GroupsForm;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.testng.Assert;
-
 import java.util.Map;
-
 import static junit.framework.Assert.assertEquals;
 
 public class GroupsSteps {
-
     private AccountMenu accountMenu;
     private Groups groups;
     private GroupsForm groupsForm;
@@ -32,7 +27,6 @@ public class GroupsSteps {
     public void iClickMyGroupsLink() {
         groups.clickMyGroupsLink();
     }
-
 
     @When("I add Group With:")
     public void iAddGroupWith(Map<String, String> data) {
