@@ -37,6 +37,18 @@ public class WebDriverAction {
         webElement.sendKeys(value);
     }
 
+    public void clearAndSetValue(By selector, String value) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
+        driver.findElement(selector).clear();
+        driver.findElement(selector).sendKeys(value);
+    }
+
+    public void clearAndSetValue(WebElement webElement, String value) {
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+        webElement.clear();
+        webElement.sendKeys(value);
+    }
+
     public String getText(WebElement webElement) {
         wait.until(ExpectedConditions.visibilityOf(webElement));
         return webElement.getText();
