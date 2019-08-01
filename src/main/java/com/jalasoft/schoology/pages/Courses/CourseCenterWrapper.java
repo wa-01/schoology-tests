@@ -63,6 +63,7 @@ public class CourseCenterWrapper extends AbstractPage {
         return name;
     }
 
+
     public void clickNotificationsButton(){
         action.click(notificationsButton);
     }
@@ -76,3 +77,4 @@ public class CourseCenterWrapper extends AbstractPage {
     }
 
 }
+

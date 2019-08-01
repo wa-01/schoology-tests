@@ -31,6 +31,7 @@ public class CourseCreatePopup extends AbstractPage {
     private WebElement saveCourse;
 
     @FindBy(css = "a[href='javascript://']")
+
     private WebElement closeCreateCourseWindow;
 
     public static final String SUBJECT_AREA = "//option[contains(text(),'%s')]";
