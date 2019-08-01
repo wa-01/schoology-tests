@@ -30,6 +30,9 @@ public class CourseCreatePopup extends AbstractPage {
     @FindBy(css = "input[class='form-submit']")
     private WebElement saveCourse;
 
+    @FindBy(css = "a[href='javascript://']")
+    private WebElement closeCreateCourseWindow;
+
     public static final String SUBJECT_AREA = "//option[contains(text(),'%s')]";
     public static final String LEVEL = "//option[contains(text(),'%s')]";
 
@@ -62,12 +65,18 @@ public class CourseCreatePopup extends AbstractPage {
         action.click(levelDropdown);
         action.click(By.xpath(String.format(LEVEL, level)));
     }
+
     public void saveCourse() {
         action.click(saveCourse);
         driver.navigate().refresh();
     }
+
     public String getSubjectArea(){
         String subjectArea = action.getText(subjectAreaSelected);
         return subjectArea;
+    }
+
+    public void closeCreateWindow(){
+        action.click(closeCreateCourseWindow);
     }
 }
