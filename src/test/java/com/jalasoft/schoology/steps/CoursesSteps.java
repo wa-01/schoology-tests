@@ -148,4 +148,53 @@ public class CoursesSteps {
     public void iSelectACourse(String courseName){
         dashboard.selectCourse(courseName);
     }
+    @Then ("I validate folder {string} is listed in materials list")
+    public void iValidateFolderIsListedInMaterialsList(String folder){
+        courseCenterWrapper = new CourseCenterWrapper();
+        boolean folderIsListed = false;
+        try {
+            courseCenterWrapper.readFolderName(folder);
+            folderIsListed = true;
+        } catch (WebDriverException ex) {}
+        Assert.assertFalse(folderIsListed);
+    }
+
+    @And ("I click materials context menu")
+    public void iSetFolderName(){
+        courseCenterWrapper = new CourseCenterWrapper();
+        courseCenterWrapper.clickMaterialsContextMenu();
+    }
+
+    @And ("I validate folder {string} is listed in materials context menu")
+    public void iValidateFolderIsListedInMaterialsContextMenu(String folder){
+        courseCenterWrapper = new CourseCenterWrapper();
+        boolean folderIsListed = false;
+        try {
+            courseCenterWrapper.readFolderNameContextMenu(folder);
+            folderIsListed = true;
+        } catch (WebDriverException ex) {}
+        Assert.assertTrue(folderIsListed);
+    }
+    @When("I click Notifications button")
+    public void iClickNotificationsButton(){
+        courseCenterWrapper = new CourseCenterWrapper();
+        courseCenterWrapper.clickNotificationsButton();
+    }
+
+    @ And ("I check {string} option")
+    public void iSelectNotifications(String notificationOption){
+        courseCenterWrapper = new CourseCenterWrapper();
+        courseCenterWrapper.checkNotificationOption(notificationOption);
+    }
+
+    @And ("I click save notification changes button")
+    public void iSaveNotificationChanges(){
+        courseCenterWrapper = new CourseCenterWrapper();
+        courseCenterWrapper.saveNotification();
+    }
+
+    @And ("I close edit course window")
+    public void icloseCreateCourseWindow(){
+        courseCreatePopup.closeCreateWindow();
+    }
 }
