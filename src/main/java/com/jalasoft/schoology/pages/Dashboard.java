@@ -30,6 +30,9 @@ public class Dashboard extends AbstractPage{
     @FindBy(css = "input[value='Delete']")
     private WebElement deleteButton;
 
+    @FindBy(css = ".message-text")
+    private WebElement messageText;
+
     public Dashboard clickTheEventLink(){
         action.click(clickEventLink);
         return new Dashboard();
@@ -64,5 +67,9 @@ public class Dashboard extends AbstractPage{
 
     public void pressDeleteButton(){
         action.click(deleteButton);
+    }
+
+    public String getMessageText(){
+        return action.getText(messageText);
     }
 }
