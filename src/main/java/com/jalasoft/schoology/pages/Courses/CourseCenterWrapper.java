@@ -31,7 +31,6 @@ public class CourseCenterWrapper extends AbstractPage {
     @FindBy(css = "#edit-submit")
     private WebElement saveNotificationButton;
 
-
     public static final String NOTIFICATION_OPTION = "//span[text()='%s']/preceding-sibling::input[@type='checkbox']";
     public static final String FOLDER_NAME = "//a[contains(text(),'%s')]";
     public static final String FOLDER_NAME_CONTEXT_MENU = "//a[text()='%s']";
@@ -75,5 +74,6 @@ public class CourseCenterWrapper extends AbstractPage {
     public void saveNotification() {
         action.click(saveNotificationButton);
     }
+    
 }
 
