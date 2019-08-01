@@ -17,9 +17,11 @@ public class Profile extends AbstractPage {
     public String getPageTitleAccount(){
         return action.getText(pageTitle);
     }
+
     public String getBirthdayText(){
         return action.getText(birthdayText);
     }
+    
     public String getEmailText(){
         return action.getText(emailText);
     }
