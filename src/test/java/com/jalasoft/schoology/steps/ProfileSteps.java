@@ -24,8 +24,8 @@ public class ProfileSteps {
     }
 
     @When("I click {string} option")
-    public void iClickYourProfileLink(String link){
-        header.clickAccountLink(link);
+    public void iClickAccountOption(String link){
+        header.clickAccountOption(link);
     }
 
     @Then("I validate the page title name is the same as the profile account")
@@ -90,4 +90,6 @@ public class ProfileSteps {
     public void iValidateInterestWasAdded(String interest){
         assertEquals(interest, profile.getInterest());
     }
+
+
 }
