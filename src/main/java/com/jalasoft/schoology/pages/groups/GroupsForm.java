@@ -44,14 +44,16 @@ public class GroupsForm extends AbstractPage {
             strategyMap.get(key).execute();
         }
 
-
         action.click(creteButton);
 
         // This needs to be removed
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
+        if (driver.findElements(By.cssSelector("#error-page")).size() > 0) {
+            driver.navigate().to(driver.getCurrentUrl());
         }
 
         return new GroupDetail();
