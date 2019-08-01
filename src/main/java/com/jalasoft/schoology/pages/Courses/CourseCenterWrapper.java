@@ -64,15 +64,15 @@ public class CourseCenterWrapper extends AbstractPage {
         return name;
     }
 
-    public void clickNotificationsButton(){
+    public void clickNotificationsButton() {
         action.click(notificationsButton);
     }
 
-    public void checkNotificationOption(String notificationText){
+    public void checkNotificationOption(String notificationText) {
         action.click(By.xpath(String.format(NOTIFICATION_OPTION, notificationText)));
     }
 
-    public void saveNotification(){
+    public void saveNotification() {
         action.click(saveNotificationButton);
     }
 }
