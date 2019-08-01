@@ -65,14 +65,17 @@ public class CourseCreatePopup extends AbstractPage {
         action.click(levelDropdown);
         action.click(By.xpath(String.format(LEVEL, level)));
     }
+
     public void saveCourse() {
         action.click(saveCourse);
         driver.navigate().refresh();
     }
+
     public String getSubjectArea(){
         String subjectArea = action.getText(subjectAreaSelected);
         return subjectArea;
     }
+
     public void closeCreateWindow(){
         action.click(closeCreateCourseWindow);
     }
