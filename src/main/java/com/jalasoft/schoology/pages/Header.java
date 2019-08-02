@@ -81,7 +81,7 @@ public class Header extends AbstractPage {
     public void clickIconBellMenu() {
         action.click(iconBellMenu);
     }
-    public void clickAccountLink(String link){
+    public void clickAccountOption(String link){
         String accountLinkLocator = String.format(ACCOUNT_LINK, link);
         action.click(By.xpath(accountLinkLocator));
     }
