@@ -31,6 +31,18 @@ public class Resource extends AbstractPage {
     @FindBy(xpath = "//span[@class='submit-span-wrapper']//child::input[@value='Delete']")
     private WebElement deleteButton;
 
+    @FindBy(css = "input[name='link']")
+    private WebElement urlInput;
+
+    @FindBy(css = "input[name='link-title']" )
+    private WebElement urlTitleInput;
+
+    @FindBy(css = "input[value='Add']")
+    private WebElement addButton;
+
+    @FindBy(xpath = "//td[@class='collection-item-title']//child::a")
+    private WebElement urlTitle;
+
     public void clickAddResourcesButton() {
         action.click(addResourcesButton);
     }
@@ -70,6 +82,23 @@ public class Resource extends AbstractPage {
     public void clickDeleteButton() {
         wait.until(ExpectedConditions.elementToBeClickable(deleteButton));
         action.click(deleteButton);
+    }
+
+    public void addLinkResource(String urlResource){
+        wait.until(ExpectedConditions.elementToBeClickable(urlInput));
+        action.setValue(urlInput, urlResource);
+    }
+
+    public void addLinkTitle(String urlTitle){
+        action.setValue(urlTitleInput, urlTitle);
+    }
+
+    public void clickAddButton(){
+        action.click(addButton);
+    }
+
+    public String getUrlTitle(){
+        return action.getText(urlTitle);
     }
 
 }

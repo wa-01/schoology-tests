@@ -75,4 +75,25 @@ public class ResourcesSteps {
         resource = new Resource();
         resource.clickDeleteButton();
     }
+
+    @And("I add URL {string} link")
+    public void iAddLinkResource(String urlResource){
+        resource.addLinkResource(urlResource);
+    }
+
+    @And("I add URL {string} title")
+    public void iAddUrlTitle(String urlTitle){
+        resource.addLinkTitle(urlTitle);
+    }
+
+    @And("I click the \"Add\" button")
+    public void iClickAddButton(){
+        resource.clickAddButton();
+    }
+
+    @Then("I validate {string} link is available")
+    public void iValidateLinkIsAvailable(String urlTitle){
+        String createdUrlTitle = resource.getUrlTitle();
+        assertEquals(createdUrlTitle, urlTitle);
+    }
 }
