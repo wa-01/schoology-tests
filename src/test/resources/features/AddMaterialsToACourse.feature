@@ -1,7 +1,7 @@
 Feature: AddFolderMaterialToACourse
 
   Background:
-    Given I sign in as "emely.llanos@jalasoft.com" user and "Control123!"
+    Given I sign in as "trainer"
     And I click Courses menu
     And I click myCourses link
     And I click createCourse button
