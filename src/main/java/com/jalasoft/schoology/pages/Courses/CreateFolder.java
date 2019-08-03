@@ -2,8 +2,6 @@ package com.jalasoft.schoology.pages.Courses;
 
 import com.jalasoft.schoology.core.ui.ISteps;
 import com.jalasoft.schoology.pages.AbstractPage;
-import com.sun.javafx.sg.prism.NGPhongMaterial;
-import javafx.scene.paint.Material;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
