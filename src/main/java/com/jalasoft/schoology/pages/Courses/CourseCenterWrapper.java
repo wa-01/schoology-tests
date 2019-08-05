@@ -31,6 +31,15 @@ public class CourseCenterWrapper extends AbstractPage {
     @FindBy(css = "#edit-submit")
     private WebElement saveNotificationButton;
 
+    @FindBy(css="div[class='messages-close-btn']")
+    private WebElement confirmationMessage;
+
+    @FindBy(xpath="//span[text()='Comments on my posts']/preceding-sibling::input[@type='checkbox']")
+    private WebElement notificationComments;
+
+    @FindBy(xpath="//span[text()='Course content created']/preceding-sibling::input[@type='checkbox']")
+    private WebElement notificationCourse;
+
     public static final String NOTIFICATION_OPTION = "//span[text()='%s']/preceding-sibling::input[@type='checkbox']";
     public static final String FOLDER_NAME = "//a[contains(text(),'%s')]";
     public static final String FOLDER_NAME_CONTEXT_MENU = "//a[text()='%s']";
@@ -63,7 +72,6 @@ public class CourseCenterWrapper extends AbstractPage {
         return name;
     }
 
-
     public void clickNotificationsButton(){
         action.click(notificationsButton);
     }
@@ -76,5 +84,15 @@ public class CourseCenterWrapper extends AbstractPage {
         action.click(saveNotificationButton);
     }
 
+    public boolean notificationStatus(String notification){
+        boolean isNotificationSelected =  false;
+        if (notification.equals("Comments on my posts")) {
+            isNotificationSelected = action.isSelected(notificationComments);
+        }
+        if (notification.equals("Course content created")) {
+            isNotificationSelected = action.isSelected(notificationComments);
+        }
+        return isNotificationSelected;
+    }
 }
 
