@@ -215,4 +215,12 @@ public class CoursesSteps {
     public void icloseCreateCourseWindow(){
         courseCreatePopup.closeCreateWindow();
     }
+
+    @Then ("I validate {string} notification is selected")
+    public void iValidateNotificationIsSelected(String notification){
+        courseCenterWrapper = new CourseCenterWrapper();
+        boolean isNotificationSelected = false;
+        isNotificationSelected = courseCenterWrapper.notificationStatus(notification);
+        Assert.assertTrue(isNotificationSelected);
+    }
 }
